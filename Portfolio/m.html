@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yugant Nath | Frontend Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4C+XJzjQXGg3Z56G0tI9lxY6uDROnJkHHRx9/0cYx3B15PGlfxwxE/BO3a+cex0G1YqQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* Header Styles */
+        nav {
+            background: #333;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            align-items: center;
+        }
+        nav .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        nav .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        nav .nav-links li {
+            margin-left: 1.5rem;
+        }
+        nav .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        nav .nav-links a:hover {
+            color: #3498db;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: #fff;
+        }
+        .hero h1 {
+            font-size: 3rem;
+        }
+        .hero h1 span {
+            color: #ffcc29;
+        }
+        .hero h2 {
+            font-size: 2rem;
+            margin: 1rem 0;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .hero .buttons .btn {
+            background: #ffcc29;
+            color: #333;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            margin: 0.5rem;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .hero .buttons .btn:hover {
+            background: #ffc107;
+        }
+
+        /* About Section */
+        #about {
+            padding: 2rem;
+            text-align: center;
+            background: #fff;
+        }
+        #about h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #3498db;
+        }
+        #about p {
+            font-size: 1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Skills Section */
+        #skills {
+            padding: 2rem;
+            background: #f4f4f4;
+            text-align: center;
+        }
+        #skills h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #3498db;
+        }
+        #skills ul {
+            list-style: none;
+            margin: 1rem 0;
+            padding: 0;
+        }
+        #skills ul li {
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 2rem;
+            background: #f4f4f4;
+            text-align: center;
+        }
+        #contact h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #3498db;
+        }
+        #resume {
+            padding: 2rem;
+            background: #fff;
+            text-align: center;
+        }
+        #resume h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #3498db;
+        }
+        #contact form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        #contact form input, #contact form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #contact form button {
+            background: #3498db;
+            color: #fff;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        #contact form button:hover {
+            background: #2874a6;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem 2rem;
+            margin-top: 2rem;
+        }
+        .footer .social-icons a {
+            color: #fff;
+            margin: 0 0.5rem;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        .footer .social-icons a:hover {
+            color: #3498db;
+        }
+        #img{
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+        
+            margin-left: 100;
+        }
+
+
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: #fff;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; /* For responsiveness */
+    gap: 2rem; /* Space between the image and text */
+}
+
+#img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    flex-shrink: 0; /* Prevent the image from shrinking */
+    text-align: left;
+}
+
+.hero-text {
+    max-width: 600px;
+    text-align: left;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.hero h1 span {
+    color: hwb(60 27% 10%);
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Yugant.</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <img id="img" src="WhatsApp Image 2024-11-18 at 01.15.20_22e48d5d.jpg" alt="Yugant Nath's Picture">
+
+            <h1>Hi, I'm <span>Yugant Nath</span></h1>
+            <h2>Frontend Developer</h2>
+            <p>Crafting engaging and user-friendly web experiences.</p>
+          
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <img src="" alt="">
+            <h2>About Me</h2>
+            <p>
+                I'm Yugant Nath, a frontend developer passionate about creating visually appealing and user-friendly websites. I aim to deliver seamless digital experiences using modern frameworks and tools.
+            </p>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>My Skills</h2>
+            <ul>
+                <li>HTML - 90%</li>
+                <li>CSS - 80%</li>
+                <li>JavaScript - 65%</li>
+                <li>Python - 75%</li>
+            </ul>
+        </section>
+
+        <section>
+            <section id="resume">
+                <h2>Resume</h2>
+                <p>You can download my resume at : <a href="https://drive.google.com/file/d/1bGAdjjIi5_tepjnYUfw4ipLJgfvlys8V/view?usp=drive_link">Resume</a></p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form id="contactForm">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+        <p>&copy; 2024 Yugant Nath. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
